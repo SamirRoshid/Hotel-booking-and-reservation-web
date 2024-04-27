@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en"> <!--Start of the HTML document with an 'en' language attribute-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configures the viewport for responsive design -->
+    <title>Login</title> <!--Title of the web page-->
+    <style>  
+        body{font-family: Arial,sand-serif;
+            background-color: #f1f1f1;
+        }
+
+
+        .container{max-width: 400px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+
+    h2{
+        text-align: center;
+    }
+
+
+    .form-group{
+        margin-bottom: 20px; 
+    }
+
+
+    .form-group label{
+        display: block;
+        margin-bottom: 5px;
+    }
+
+
+    .form-group input{
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+    }
+
+
+    .form-group button{
+        width: 100%;
+        padding: 10px;
+        background-color: #4CAF50;
+        color: #fff;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+
+
+    .form-group button:hover{
+        background-color: #45a049;
+    }
+</style>
+</head>
+<body> <!--Main body content of the HTML document-->
+    <header>
+        <h1>Login to Your Account</h1> <!--Displaying main heading with the header section-->
+    </header>
+
+    <main> <!--Main content section of the webpage-->
+        <form action="/login" method="POST"> <!--Form for user login-->
+            <label for="username">Username:</label> <!--Label for username input field-->
+            <input type="text" id="username" name="username" required> <!--Input field for entering the username-->
+            <br>
+            <label for="password">Password:</label> <!--Label for password input field-->
+            <input type="password" id="password" name="password" required> <!--Input field for entering the password-->
+            <br>
+            <button type="submit">Login</button> <!--Button to submit the login form-->
+        </form>
+        <p>Don't have an account? <a href="/register">Register</a></p> <!--This is the link for the register form for new users-->
+        <p>Timer: <span id="timer">{{ countdown_time }}</span></p>
+    </main>
+
+    <footer>
+        <p>&copy; Hotel Booking and Reservations. All rights reserved.</p>
+    </footer>
+</body>
+</html>

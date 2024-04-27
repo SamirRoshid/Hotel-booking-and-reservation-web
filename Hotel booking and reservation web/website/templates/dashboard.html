@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en"> <!-- Start of the HTML document with the 'en' language attribute -->
+<head> <!-- Head section of the HTML document-->
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Booking and Reservation Website</title> <!--Title of the webpage-->
+</head>
+
+<body>  <!-- Main body content of the HTML document -->
+    <header> <!-- Header section containing the main title of the page -->
+        <h1>Welcome to Our Hotel Booking and Reservation Website</h1> <!--Main title of the webpage-->
+    </header>
+
+    <main> <!-- Main content section of the page -->
+        <h2>Personal Details</h2> <!-- Subheading for the personal details section -->
+        <form action="/confirm_booking" method="POST"> <!--Form for submitting the personal details-->
+            <label for="name">Name:</label> <!-- Label for the name input field -->
+            <input type="text" id="name" name="name" required> <!--Input field for entering the name-->
+            <br>
+
+            <label for="surname">Surname:</label> <!--Label for the surname field-->
+            <input type="text" id="surname" name="surname"> <!--Input field for entering the surname-->
+            <br>
+
+            <label for="email">Email:</label> <!--Label for the email field-->
+            <input type="email" id="email" name="email" required> <!--Input field for entering the email-->
+            <br>
+
+            <label for="phone">Phone Number:</label> <!--Label for the phone number field-->
+            <input type="tel" id="phone" name="phone" required> <!--Input field for entering the phone number-->
+            <br> 
+        </form>
+    </main>
+
+    <h3>Select Extra Services</h3> <!--Subheading for the extra services section-->
+    <form method="POST"> <!--Form for selecting extra services-->
+        <ul> <!--Unordered list for displaying extra services as checkboxes-->
+            {% for service in extra_services %} <!--Loop through each service in the extra_services list-->
+                <li>
+                    <label>
+                        <input type="checkbox" name="selected_services" value="{{ service }}">
+                        <!-- Checkbox for selecting the service with the value as the service name -->
+                        {{ service }}
+                        <!-- Display the service name next to the checkbox -->
+                    </label>
+                </li>
+            {% endfor %}
+        </ul>
+        <button type="submit">Confirm Booking</button>
+        <!-- Button to submit the form and confirm the booking -->
+    </form>
+
+    <footer>
+        <p>&copy; Hotel Booking and Reservation. All rights reserved.</p>
+    </footer>
+    <p>Timer: <span id="timer">{{ countdown_time }}</span></p>
+</body>
+</html>

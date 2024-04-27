@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en"> <!-- Start of the HTML document with the 'en' language attribute -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Configures the viewport for responsive design -->
+    <title>Booking Form</title> <!-- Title of the webpage-->
+
+</head>
+<body> <!-- Main body content of the HTML document -->
+    <header>
+        <h1>Booking Form</h1> <!-- Displaying the main heading within the header section -->
+    </header>
+
+    <main>
+
+    {% with messages = get_flashed_messages() %} <!-- Start a block of code to retrieve flashed messages using Flask's get_flashed_messages() -->
+        {% if messages %} <!-- Check if there are flashed messages to display -->
+            <ul class="flash-messages"> <!-- Create an unordered list to display flashed messages -->
+                {% for message in messages %} <!-- Loop through each flashed message -->
+                    <li>{{ message }}</li> <!-- Display each message as a list item -->
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %} <!-- End the block for displaying flashed messages -->
+
+        <form action="/booking" method="POST"> <!--Form for user booking-->
+            <label for="num_rooms">Number of Rooms:</label> <!--Label for Number of Rooms input field-->
+            <input type="number" id="num_rooms" name="num_rooms" required> <!--Input field for entering the Number of Rooms-->
+            <br>
+
+            <label for="checkin_date">Check-In Date:</label> <!--Label for Check-In Date input field-->
+            <input type="date" id="checkin_date" name="checkin_date" required> <!--Input field for entering the Check-In Date-->
+            <br>
+
+            <label for="checkout_date">Check-Out Date:</label> <!--Label for Check-Out Date input field-->
+            <input type="date" id="checkout_date" name="checkout_date" required> <!--Input field for entering the Check-Out Date-->
+            <br>
+
+            <label for="num_guests">Number of Guests:</label> <!--Label for Number of Guests input field-->
+            <input type="number" id="num_guests" name="num_guests" required> <!--Input field for entering the Number of Guests-->
+            <br>
+
+            <label for="room_type">Room Type:</label> <!--Label for Room Type input field-->
+            <select id="room_type" name="room_type"> <!--Dropdown menu for selecting the room type-->
+                <option value="Standard">Standard</option> 
+                <option value="Premium">Premium</option>
+                <option value="VIP">VIP</option>
+            </select>
+            <br> <!-- Line break for spacing -->
+
+            <label for="room_number">Room Number:</label> <!--Label for the room number input field-->
+            <select id="room_number" name="room_number" required> <!--Input field for entering the room number-->
+                <option value="1">1</option> <!--Options for the room numbers-->
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+            </select>
+            <br>
+
+            <button type="submit">Book Now</button> <!-- Button to submit the booking form -->
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; Hotel Booking and Reservations. All rights reserved.</p>
+    </footer>
+    <p>Timer: <span id="timer">{{ countdown_time }}</span></p>
+</body>
+</html>

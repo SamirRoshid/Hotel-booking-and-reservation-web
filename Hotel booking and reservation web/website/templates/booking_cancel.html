@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> <!--Head section of the html document-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Cancellation</title> <!--Main title of the webpage-->
+    <style>
+        #countdown {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background-color: #f44336;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body> <!--Main body content of the html document-->
+    <header> <!--Contains the main heading of the webpage-->
+        <h1>Booking Cancellation</h1> <!--Main heading of the webspage-->
+    </header>
+
+    <main> <!--Main conten section of the page-->
+        <section id="confirmation-message"> <!--Checking confirmation message section-->
+            <p>Are you sure you want to cancel your booking?</p> <!--A paragraph asking the user if they really want to cancel their booking-->
+            <form method="post"> <!--The form will be carried out when the meshod is POST-->
+                <button type="submit">Yes, Cancel</button> <!--Button to cancel the booking-->
+            </form>
+        </section>
+    </main>
+
+    <footer> <!--Footer section of the webpage-->
+        <p>&copy; Hotel Booking and Reservation website</p>
+    </footer>
+    <p>Timer: <span id="timer">{{ countdown_time }}</span></p>
+</body>
+</html>

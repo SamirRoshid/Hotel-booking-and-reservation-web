@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head> <!-- Head section of the HTML document containing metadata and the title of the page -->
+    <title>Booking Details</title> <!-- Sets the title of the webpage displayed in the browser's title bar -->
+</head>
+<body> <!--Main body content of the HTML document-->
+    <h1>Booking Details</h1> <!--Main heading of the page-->
+
+    <h2>Customer Information</h2> <!--Subheading for the customer information section-->
+    <p><strong>Name:</strong> {{ name }} {{ surname }}</p> <!--Display customers name and surname-->
+    <p><strong>Email:</strong> {{ email }}</p> <!--Display the customers email-->
+    <p><strong>Phone:</strong> {{ phone }}</p> <!--Display the customers phone number-->
+
+    <h2>Booking Information</h2> <!--Subheading for the booking information section-->
+    <p><strong>Number of Rooms:</strong> {{ num_rooms }}</p> <!--Display the number of rooms the customer selected-->
+    <p><strong>Check-In Date:</strong> {{ checkin_date }}</p> <!-- Display the customers checin date-->
+    <p><strong>Check-Out Date:</strong> {{ checkout_date }}</p> <!--Display the customers checkout date-->
+    <p><strong>Number of Guests:</strong> {{ num_guests }}</p> <!--Display the number of guests-->
+    <p><strong>Room Type:</strong> {{ room_type }}</p> <!--Display the room type selected by the customer-->
+    <p><strong>Price:</strong> {{ price }}</p> <!--Display the total price for the customer' booking-->
+    <p><strong>Room Number:</strong> {{ room_number }}</p> <!--Display the room number selected by the customer-->
+
+    <p><a href="/">Back to Home</a></p> <!--A link to go back to the home page after viewing the customer details-->
+    <p>Timer: <span id="timer">{{ countdown_time }}</span></p>
+</body>
+</html>
+
